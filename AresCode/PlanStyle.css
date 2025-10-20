@@ -1,0 +1,408 @@
+html, body{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(-135deg, #0a0a0a, #242424); 
+    color: #ffffff;
+  }
+  
+  header {
+    display: flex;
+    gap: 4rem;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 60px;
+    background-color: transparent;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ececec;
+  }
+  .logo a {
+    text-decoration: none;
+    color: #ececec;
+  }
+  .logo a:hover{
+    color: #b6c7ff;
+  }
+  
+  nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #ececec;
+    font-weight: 500;
+  }
+  
+  nav ul li a:hover {
+    color: #b6c7ff;
+  }
+  
+  .pricing-section {
+    text-align: center;
+    padding: 30px 80px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .pricing-section h1 {
+    font-size: 6rem;
+    margin-bottom: 40px;
+    background: linear-gradient(90deg, #5ac5f7, #fff495);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: left;
+  }
+  .pricing-section h2{
+    text-align: left;
+    font-weight: 300;
+  }
+  
+
+  .cards-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    
+  }
+  
+
+  .BasiCard {
+    background: linear-gradient(145deg, #2c2c2c, #383838);
+    padding: 30px;
+    border-radius: 12px;
+    border:solid rgb(211, 234, 255);
+    width: 15vw;
+    min-width: 180px;
+    box-shadow: 0 6px 12px rgba(255, 228, 228, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .BasiCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(255, 228, 228, 0.5);
+  }
+  
+
+  .BasiCard h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+  }
+  
+
+  .BasiCard ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+  }
+  
+  .BasiCard ul li {
+    margin: 8px 0;
+  }
+
+.StandardCard {
+    background: linear-gradient(145deg, #2c2c2c, #383838);
+    padding: 30px;
+    border-radius: 12px;
+    border:solid #85a7ee;
+    width: 15vw;
+    min-width: 180px;
+    box-shadow: 0 6px 12px rgba(193, 212, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.StandardCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(193, 212, 255, 0.5);
+}
+
+
+.StandardCard h3 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+
+.StandardCard ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+.StandardCard ul li {
+  margin: 8px 0;
+}
+
+.PremiumCard {
+    background: linear-gradient(145deg, #2c2c2c, #383838);
+    padding: 30px;
+    border-radius: 12px;
+    border:solid #b8a32f;
+    width: 15vw;
+    min-width: 180px;
+    box-shadow: 0 6px 12px rgba(212, 210, 72, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.PremiumCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(212, 210, 72, 0.5);
+}
+
+
+.PremiumCard h3 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+
+.PremiumCard ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+.PremiumCard ul li {
+  margin: 8px 0;
+}
+
+  .BasicPrice {
+    font-weight: bold;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #d3eaff;
+  }
+  .BasicPrice span{
+    font-weight: 400;
+    font-size: 1rem;
+  }
+  
+  .StanPrice {
+    font-weight: bold;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #85a7ee;
+  }
+  .StanPrice span{
+    font-weight: 400;
+    font-size: 1rem;
+  }
+  
+  .GoldPrice {
+    font-weight: bold;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #F7EF8A, #D2AC47);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .GoldPrice span{
+    font-weight: 400;
+    font-size: 1rem;
+  }
+  
+.BasicBtn {
+  position: relative;
+  margin-top:20px;
+  padding: 15px 20px;
+  border-radius: 7px;
+  border: 1px solid rgb(211, 234, 255);
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  background: transparent;
+  color: #fff;
+  overflow: hidden;
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.BasicBtn:hover {
+  color: #2c2c2c;
+  background: rgb(211, 212, 255);
+  box-shadow: 0 0 30px 5px rgba(211, 234, 255, 0.815);
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+.BasicBtn:hover::before {
+  -webkit-animation: sh02 0.5s 0s linear;
+  -moz-animation: sh02 0.5s 0s linear;
+  animation: sh02 0.5s 0s linear;
+}
+
+.BasicBtn::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: #fff;
+  box-shadow: 0 0 50px 30px #fff;
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  -o-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+
+@keyframes sh02 {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+
+.BasicBtn:active {
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: box-shadow 0.2s ease-in;
+  -moz-transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in;
+}
+.StandBtn {
+  position: relative;
+  margin-top:20px;
+  padding: 15px 20px;
+  border-radius: 7px;
+  border: 1px solid rgb(133, 167, 238);
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  background: transparent;
+  color: #fff;
+  overflow: hidden;
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.StandBtn:hover {
+  color: #2c2c2c;
+  background: rgb(133, 167, 238);
+  box-shadow: 0 0 30px 5px rgba(133, 167, 238, 0.815);
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+.StandBtn:hover::before {
+  -webkit-animation: sh02 0.5s 0s linear;
+  -moz-animation: sh02 0.5s 0s linear;
+  animation: sh02 0.5s 0s linear;
+}
+
+.StandBtn::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: #fff;
+  box-shadow: 0 0 50px 30px #fff;
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  -o-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+
+.StandBtn:active {
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: box-shadow 0.2s ease-in;
+  -moz-transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in;
+}
+.GoldBtn {
+  position: relative;
+  margin-top:20px;
+  padding: 15px 20px;
+  border-radius: 7px;
+  border: 1px solid rgb(248, 233, 99);
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  background: transparent;
+  color: #fff;
+  overflow: hidden;
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.GoldBtn:hover {
+  color: #2c2c2c;
+  background: linear-gradient(90deg, #F7EF8A, #D2AC47);
+  box-shadow: 0 0 30px 5px rgba(247, 239, 138, 0.815);
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+.GoldBtn:hover::before {
+  -webkit-animation: sh02 0.5s 0s linear;
+  -moz-animation: sh02 0.5s 0s linear;
+  animation: sh02 0.5s 0s linear;
+}
+
+.GoldBtn::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: #fff;
+  box-shadow: 0 0 50px 30px #fff;
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  -o-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+
+.GoldBtn:active {
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: box-shadow 0.2s ease-in;
+  -moz-transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in;
+}
