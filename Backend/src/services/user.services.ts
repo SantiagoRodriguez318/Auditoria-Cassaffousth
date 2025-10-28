@@ -38,7 +38,7 @@ export const createUserService = async (data: Partial<User>): Promise<User> => {
     const verificationLink = `http://localhost:3000/verify/${verificationToken}`;
 
     await transporter.sendMail({
-        from: '"Olimpiadas" <SantiagoMKiller123@gmail.com>',
+        from: '"AresCodeBD" <SantiagoMKiller123@gmail.com>',
         to: newUser.Email,
         subject: "Verificá tu cuenta",
         html: `
