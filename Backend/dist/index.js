@@ -5,17 +5,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 require("reflect-metadata");
 const app_1 = __importDefault(require("./app"));
-const DbConfig_1 = require("./DbConfig");
-async function initialize() {
+const db_1 = require("./db");
+async function main() {
     try {
-        await DbConfig_1.AppDataSource.initialize();
-        console.log("Base de datos conectada");
+        await db_1.AppDataSource.initialize();
+        console.log('Database connected');
         app_1.default.listen(3000);
-        console.log('Server is running on port', 3000);
+        console.log("Server is listening on port", 3000);
     }
     catch (error) {
         console.error(error);
     }
 }
-initialize();
+main();
 //# sourceMappingURL=index.js.map

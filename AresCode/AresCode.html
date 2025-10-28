@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AresCode - Contacto</title>
   <link rel="stylesheet" href="AresStyle.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
 </head>
 <body>
 
@@ -12,26 +13,30 @@
     <div class="logo">AresCode</div>
     <nav>
       <ul>
-        <li><a href="#">Paquetes</a></li>
-        <li><a href="#">Ayuda</a></li>
-        <li><a href="#">Iniciar sesión</a></li>
+        <li><a href="Plans.html">Paquetes</a></li>
+        <button class="SocialBtn" onclick="toggleSocialWindow()">Redes</button>
+        <div id="SocialWindow" class="SocialWindow">
+          <i id="InstagramLogo" class="fab fa-instagram"></i> <i id="WhatsappLogo" class="fab fa-whatsapp"></i>
+        </div>
+        <li><a href="Login.html">Iniciar sesión</a></li>
       </ul>
     </nav>
   </header>
 
   <main class="contact-section">
     <div class="text-content">
-      <h1>Contáctanos hoy, impulsa tu proyecto pasado mañana</h1>
-      <p>En AresCode, conectamos talento con tecnología. Escríbenos para comenzar tu transformación digital.</p>
-      <div class="buttons">
-        <a href="#" class="btn primary">Escríbenos</a>
-        <a href="#" class="btn secondary">Más información</a>
+      <img class="banner" src="Images/Hand2.png">
+      <h1>Contáctanos hoy<br>impulsa tu proyecto mañana</h1>
+      <p>En AresCode, conectamos talento con tecnología. Escríbenos para<br>comenzar tu transformación digital.</p>
+      <div class="Buttons">
+        <button class="ContactBtn">Escríbenos</button>
+        <button class="InfoBtn" onclick="toggleInfoWindow()">Más información</button>
+        <div id="InfoWindow" class="InfoWindow">
+          <p> AresCode es una empresa de desarrolladores encargados de la elaboración de paginas Web, Abarcamos desde pequeños emprendendedores hasta grandes empresas </p>
+        </div>
       </div>
     </div>
-    <div class="image-content">
-      <img src="imagen-contacto.jpg" alt="Contacto AresCode">
-    </div>
   </main>
-
-</body>
+    <script src="AresScript.js"></script>
+  </body>
 </html>

@@ -22,8 +22,8 @@
 
     // Stricter Typechecking Options
     "noUncheckedIndexedAccess": true,
-    "exactOptionalPropertyTypes": true,
-
+    "exactOptionalPropertyTypes": false,
+    "experimentalDecorators": true,
     // Style Options
     // "noImplicitReturns": true,
     // "noImplicitOverride": true,
@@ -32,10 +32,10 @@
     // "noFallthroughCasesInSwitch": true,
     // "noPropertyAccessFromIndexSignature": true,
 
+  "emitDecoratorMetadata": true,
+  "strictPropertyInitialization": false,
+
     // Recommended Options
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "strictPropertyInitialization": false,
     "strict": true,
     "jsx": "react-jsx",
     "verbatimModuleSyntax": false,
