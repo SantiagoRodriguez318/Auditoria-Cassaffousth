@@ -22,7 +22,11 @@
 
     // Stricter Typechecking Options
     "noUncheckedIndexedAccess": true,
+<<<<<<< HEAD
     "exactOptionalPropertyTypes": false,
+=======
+    "exactOptionalPropertyTypes": true,
+>>>>>>> 9d74377cb464c7b807eadb329256f629e2bcae65
     "experimentalDecorators": true,
     // Style Options
     // "noImplicitReturns": true,
