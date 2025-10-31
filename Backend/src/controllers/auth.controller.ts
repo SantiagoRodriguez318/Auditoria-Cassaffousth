@@ -59,11 +59,13 @@ export const Login = async (req: Request, res: Response) => {
         SECRET_KEY as Secret,
         { expiresIn: '1h' }  // El token expirará en 1 hora
         );
-        res.json({ token });
-        console.log('Token generado:', token);
+        console.log('Token generado:', token)
+        return res.json({ token });
 
-    } catch (error) {
-        console.error('Error en el inicio de sesión:', error);
+
+    } catch (error) { 
+        console.error("❌ Error en Login:", error);
+
         if (error instanceof Error) {
             return res.status(500).json({ message: 'Error del servidor' });
         }

@@ -1,16 +1,68 @@
-async function probarConexion() {
-    try {
-        const res = await fetch("http://localhost:3000/users");
-        const data = await res.json();
-        console.log("Datos del backend:", data);
-        document.getElementById("resultado").textContent = JSON.stringify(data);
-    } catch (error) {
-        console.error("Error al conectar con el backend:", error);
-        document.getElementById("resultado").textContent = "Error al conectar con el backend";
-    }
-}
-
 document.addEventListener("DOMContentLoaded", () => {
-    const btn = document.getElementById("btnProbarBack");
-    if (btn) btn.addEventListener("click", probarConexion);
+    const form = document.getElementById("loginForm");
+
+  // Elementos del popup
+    const popup = document.getElementById("login-popup");
+    const popupMessage = document.getElementById("popup-message");
+    const popupClose = document.getElementById("popup-close");
+
+    let redirectOnClose = true;
+
+  // Función para mostrar popup
+    function showPopup(message, type = "success") {
+        popup.style.display = "flex";
+        popupMessage.textContent = message;
+        popup.querySelector(".popup-content").className = `popup-content ${type}`;
+    }
+
+  // Cerrar manualmente
+    popupClose.addEventListener("click", () => {
+        popup.style.display = "none";
+        if (redirectOnClose) {
+            window.location.href = "Dashboard.html";
+        }
+    });
+
+  // Envío del formulario
+    form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        console.log("Evento submit hecho");
+
+        const Email = document.getElementById("email").value;
+        const Contraseña = document.getElementById("password").value;
+
+        console.log("Enviando petición al servidor...");
+
+    try {
+        const response = await fetch("http://localhost:3000/auth/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        body: JSON.stringify({ Email, Contraseña }),
+        });
+
+        console.log("Respuesta recibida:", response);
+
+        const data = await response.json();
+        console.log("Datos JSON:", data);
+
+        if (response.ok) {
+            console.log("✅ Login correcto");
+            showPopup("Inicio de sesión correcto ✅", "success");
+
+        // Guardar token
+        if (data.token) {
+            localStorage.setItem("token", data.token);
+        }
+
+        } else {
+            console.log("❌ Error en el login:", data.message);
+            showPopup(data.message || "Error al iniciar sesión ❌", "error");
+        }
+    } catch (error) {
+        console.error("Error en el bloque principal:", error);
+        showPopup("Error en la conexión con el servidor ❌", "error");
+        }
+    });
 });

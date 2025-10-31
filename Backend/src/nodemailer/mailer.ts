@@ -5,12 +5,12 @@ export const transporter = nodemailer.createTransport({
     port: 465,
     secure: true,
     auth: {
-        user: "SantiagoMKiller123@gmail.com",
-        pass: "drqx fusa ulil pmkc",
+        user: "AresCodeInfo@gmail.com",
+        pass: "ottn bcgq edaj mmyc",
     },
 });
 
 transporter.verify().then(() => {
     console.log("Preparado para enviar correos");
-});
+});t:;
 

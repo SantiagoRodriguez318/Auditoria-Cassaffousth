@@ -32,10 +32,6 @@ export class User extends BaseEntity{
     @IsString()
     Contraseña: string;
 
-    // @Column({nullable: false, unique: true})
-    // @IsString()
-    // Telefono: string;
-
     @Column({default:false})
     isVerified: boolean;
     
