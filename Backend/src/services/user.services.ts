@@ -2,9 +2,10 @@ import { UserRepository } from '../repositories/user.repository';
 import { User } from "../entities/user";
 import bcrypt from "bcryptjs";
 import jwt from 'jsonwebtoken'
-import { SECRET_KEY } from '../controllers/auth.controller';
 import { transporter } from '../nodemailer/mailer';
-
+import dotenv from 'dotenv';
+dotenv.config();
+const SECRET_KEY = process.env.SECRET_KEY || '';
 
 export const getAllUsersService = async (): Promise<User[]> => {
     return await UserRepository.findAllUsers()

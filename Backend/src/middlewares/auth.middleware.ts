@@ -1,6 +1,8 @@
 import { Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
-import { SECRET_KEY } from '../controllers/auth.controller';
+import dotenv from 'dotenv';
+dotenv.config();
+const SECRET_KEY = process.env.SECRET_KEY as string;
 
 export function VerifyToken(req: Request, res: Response, next: () => void) {
     const token = req.headers.authorization?.split(" ")[1];

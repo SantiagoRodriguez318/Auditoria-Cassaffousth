@@ -2,9 +2,10 @@ import { Request, Response } from 'express';
 import { User } from '../entities/user';
 import bcrypt from 'bcrypt';
 import jwt, { Secret } from 'jsonwebtoken';
+import dotenv from 'dotenv';
+dotenv.config();
 
-
-export const SECRET_KEY = 'SantiXDLOL123'
+export const SECRET_KEY = process.env.SECRET_KEY;
 
 export const verifyEmail = async (req: Request, res: Response) => {
     try {

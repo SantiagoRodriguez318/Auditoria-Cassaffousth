@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const popupMessage = document.getElementById("popup-message");
     const popupClose = document.getElementById("popup-close");
 
-    let redirectOnClose = true;
+    let redirectOnClose = false;
 
   // Función para mostrar popup
     function showPopup(message, type = "success") {
