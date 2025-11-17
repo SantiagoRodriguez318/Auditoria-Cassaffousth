@@ -20,7 +20,7 @@ export const getUserByIdService = async (id: number): Promise<User> => {
 
 export const createUserService = async (data: Partial<User>): Promise<User> => {
     if (!data.Contraseña) throw new Error("PASSWORD_REQUIRED")
-
+try{
         const hashedPassword = await bcrypt.hash(data.Contraseña, 10)
         const newUser = await UserRepository.createUser({ 
             ...data, 
@@ -37,9 +37,9 @@ export const createUserService = async (data: Partial<User>): Promise<User> => {
 
       // Enviar correo de verificación
     const verificationLink = `http://localhost:3000/verify/${verificationToken}`;
-
+    try{
     await transporter.sendMail({
-        from: '"AresCodeBD" <SantiagoMKiller123@gmail.com>',
+        from: '"AresCode" <AresCodeInfo@gmail.com>',
         to: newUser.Email,
         subject: "Verificá tu cuenta",
         html: `
@@ -48,9 +48,15 @@ export const createUserService = async (data: Partial<User>): Promise<User> => {
         <a href="${verificationLink}">Verificar mi cuenta</a>
         <p>Este enlace expira en 24 horas.</p>
         `,
-    });
+    }); 
+    }  catch (mailError){
+        console.error("Error al enviar el correo de verificación:", mailError);
+    }
 
-    return newUser;
+        return newUser;
+    } catch (error: any){
+            throw new Error(error.message || "Error al crear el usuario.")
+        }
     };
     
 

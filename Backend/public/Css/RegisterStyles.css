@@ -11,10 +11,10 @@ body {
 }
 
 
-.login-container {
+.register-container {
     background-color:linear-gradient(145deg, #2c2c2c, #383838);
     padding: 40px;
-     border:solid #85a7ee;
+    border:solid #85a7ee;
     border-radius: 12px;
     box-shadow:  0 6px 12px rgba(193, 212, 255, 0.3);
     width: 90%;
@@ -23,14 +23,14 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.login-container h1 {
+.register-container h1 {
     color: #ffff;
     margin-bottom: 30px;
     font-size: 1.8em;
 }
 
 
-#loginForm {
+#registerForm {
     display: flex;
     flex-direction: column;
 }
@@ -83,11 +83,9 @@ button[type="submit"]:active {
     transform: scale(0.99);
 }
 .whatsapp-button {
-    
     position: fixed;
     bottom: 20px;
     right: 20px;
-    
     background-color: #25d366; 
     color: white;
     padding: 12px 18px;
@@ -96,8 +94,6 @@ button[type="submit"]:active {
     font-size: 1em;
     font-weight: bold;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    
-   
     transition: background-color 0.3s, transform 0.3s;
     z-index: 1000; 
 }
@@ -105,6 +101,60 @@ button[type="submit"]:active {
 .whatsapp-button:hover {
     background-color: #128c7e;
     transform: scale(1.05);
+}
+
+.popup {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Contenedor del mensaje */
+.popup-content {
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    text-align: center;
+    max-width: 300px;
+    width: 80%;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Colores según el tipo de mensaje */
+.popup-content.success {
+    border-left: 6px solid #4CAF50;
+}
+
+.popup-content.error {
+    border-left: 6px solid #F44336;
+}
+
+#popup-close {
+    margin-top: 10px;
+    padding: 8px 15px;
+    border: none;
+    background-color: #2196F3;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#popup-close:hover {
+    background-color: #1976D2;
 }
 
 

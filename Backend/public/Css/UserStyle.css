@@ -1,4 +1,4 @@
-   html, body{
+  html, body{
     width: 100%;
     height: 100%;
     margin: 0;
@@ -58,6 +58,7 @@
     flex: 1;
   }
   .banner{
+    min-width: 600px;
     position: absolute;
     width: 50%;
     top: 50%;
@@ -254,6 +255,9 @@
     color: #0a0a0a;
     font-size: 70px;
   }
+  .InstagramLink{
+    text-decoration: none;
+  }
   #InstagramLogo{
     margin-right: 15px;
     transition: all 0.2s ease;
@@ -273,3 +277,17 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+  #UserLogo{
+    position: absolute;
+    top: 50px;
+    right: 40px;
+    transform: translate(0%, -50%);
+    color: #f2f2f2;
+    font-size: 29px;
+    transition: color 0.2s ease;
+  }
+  #UserLogo:active{
+    color: #007BFF;
+  }
+
+      

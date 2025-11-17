@@ -5,9 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const popup = document.getElementById("login-popup");
     const popupMessage = document.getElementById("popup-message");
     const popupClose = document.getElementById("popup-close");
-
-    let redirectOnClose = false;
-
+    let redirectionOnClose = true;
   // Función para mostrar popup
     function showPopup(message, type = "success") {
         popup.style.display = "flex";
@@ -18,8 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // Cerrar manualmente
     popupClose.addEventListener("click", () => {
         popup.style.display = "none";
-        if (redirectOnClose) {
-            window.location.href = "Dashboard.html";
+        if (redirectionOnClose) {
+            window.location.href = "UserPage.html";
+        } else {
+            window.location.href = "Login.html";
         }
     });
 
@@ -48,9 +48,9 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("Datos JSON:", data);
 
         if (response.ok) {
-            console.log("✅ Login correcto");
+            console.log("Login correcto ✅");
             showPopup("Inicio de sesión correcto ✅", "success");
-
+            redirectionOnClose: true;
         // Guardar token
         if (data.token) {
             localStorage.setItem("token", data.token);
@@ -59,10 +59,12 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             console.log("❌ Error en el login:", data.message);
             showPopup(data.message || "Error al iniciar sesión ❌", "error");
+            redirectionOnClose: false;
         }
     } catch (error) {
         console.error("Error en el bloque principal:", error);
         showPopup("Error en la conexión con el servidor ❌", "error");
-        }
+        redirectionOnClose: false;    
+    }
     });
 });

@@ -34,7 +34,7 @@ import bcrypt from 'bcryptjs';
                 Email: "Pekiness_Talleres06@gmail.com",
                 Contraseña: await bcrypt.hash("PekiGlaG2006", 10),
                 isVerified: true,
-                Rol: "Admin",
+                Rol: "Usuario",
             }),
             userRepository.create({
                 Nombre: "Lautaro Daniel",
@@ -42,7 +42,7 @@ import bcrypt from 'bcryptjs';
                 Email: "lsupichiatti@gmail.com",
                 Contraseña: await bcrypt.hash("LautiTalleres_06", 10),
                 isVerified: true,
-                Rol: "Admin",
+                Rol: "Usuario",
             }),
             userRepository.create({
                 Nombre: "Josemir Ariel",
@@ -50,7 +50,7 @@ import bcrypt from 'bcryptjs';
                 Email: "JosemirCAB2006@gmail.com",
                 Contraseña: await bcrypt.hash("Pirata2006_Grande", 10),
                 isVerified: true,
-                Rol: "Admin",
+                Rol: "Usuario",
             }),
         ];
 

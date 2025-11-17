@@ -28,6 +28,9 @@ export class User extends BaseEntity{
     @MaxLength(100, { message: 'El email no puede exceder los 100 caracteres.' })
     Email: string;
 
+    @Column({default: "Ninguno", nullable: true})
+    Plan: string;
+
     @Column({nullable: false})
     @IsString()
     Contraseña: string;
