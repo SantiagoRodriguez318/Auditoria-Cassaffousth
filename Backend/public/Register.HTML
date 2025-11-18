@@ -3,35 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrate</title>
+    <title data-i18n="register.title">Registrate</title>
     <link rel="stylesheet" href="Css/RegisterStyles.css">
 </head>
 <body>
     <div class="register-container">
-        <h1>Bienvenido a AresCode</h1>
+
+        <!-- Título -->
+        <h1 data-i18n="register.welcome">Bienvenido a AresCode</h1>
+
+        <!-- FORMULARIO -->
         <form id="registerForm">
-            <label for="name">Nombre</label>
-            <input type="text" id="name" name="name" required placeholder="Escriba su nombre">
-            <label for="surname">Apellido</label>
-            <input type="text" id="surname" name="surname" required placeholder="Escriba su apellido">
-            <label for="email">Correo Electrónico</label>
-            <input type="email" id="email" name="email" required placeholder="Ingresa tu correo electrónico">
-            <label for="password">Crea tu contraseña</label>
-            <input type="password" id="password" name="password" required placeholder="Ingresa tu contraseña">
-            <input type="password" id="Confirm" name="password" required placeholder="Confirmar contraseña">
-            <p id="Mensaje"></p>
-            <button type="submit">Registrarse</button>
+
+            <label for="name" data-i18n="register.name_label">Nombre</label>
+            <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                required 
+                placeholder="Escriba su nombre"
+                data-i18n-placeholder="register.name_ph"
+            >
+
+            <label for="surname" data-i18n="register.surname_label">Apellido</label>
+            <input 
+                type="text" 
+                id="surname" 
+                name="surname" 
+                required 
+                placeholder="Escriba su apellido"
+                data-i18n-placeholder="register.surname_ph"
+            >
+
+            <label for="email" data-i18n="register.email_label">Correo Electrónico</label>
+            <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                required 
+                placeholder="Ingresa tu correo electrónico"
+                data-i18n-placeholder="register.email_ph"
+            >
+
+            <label for="password" data-i18n="register.password_label">Crea tu contraseña</label>
+            <input 
+                type="password" 
+                id="password" 
+                name="password" 
+                required 
+                placeholder="Ingresa tu contraseña"
+                data-i18n-placeholder="register.password_ph"
+            >
+
+            <input 
+                type="password" 
+                id="Confirm" 
+                name="password" 
+                required 
+                placeholder="Confirmar contraseña"
+                data-i18n-placeholder="register.confirm_ph"
+            >
+
+            <p id="Mensaje" data-i18n="register.msg"></p>
+
+            <button type="submit" data-i18n="register.submit">Registrarse</button> <br>
+            <button id="langToggle" class="LangBtn">EN</button>
         </form>
+
+        <!-- POPUP -->
         <div id="register-popup" class="popup">
             <div class="popup-content">
                 <p id="popup-message"></p>
-                <button id="popup-close">Cerrar</button>
+
+                <!-- FIX: Solo traducimos el texto, NO el botón -->
+                <button id="popup-close">
+                    <span data-i18n="register.close">Cerrar</span>
+                </button>
             </div>
         </div>
     </div>
-    <a href="https://wa.me/5493518020538?text=Hola,%20me%20interesa%20contratar%20una%20página%20web." target="_blank" class="whatsapp-button">
-    Consultar por WhatsApp 
-</a>
-<script src="Scripts/RegisterJS.js"></script>
+
+    <!-- WHATSAPP -->
+    <a 
+        href="https://wa.me/5493518020538?text=Hola,%20me%20interesa%20contratar%20una%20página%20web." 
+        target="_blank" 
+        class="whatsapp-button"
+        data-i18n="register.whatsapp"
+    >
+        Consultar por WhatsApp
+    </a>
+
+    <!-- Scripts -->
+    <script src="Scripts/translations.js"></script>
+    <script src="Scripts/lang.js"></script>
+    <script src="Scripts/RegisterJS.js"></script>
 </body>
 </html>

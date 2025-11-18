@@ -4,7 +4,9 @@ import { seedUsers } from "./seed/Users-Seed"
 import { AppDataSource } from "./Config-BD/db"
 import dotenv from 'dotenv';
 dotenv.config();
+
 const PORT = process.env.PORT;
+
 async function main(){
         try{
                 await AppDataSource.initialize();

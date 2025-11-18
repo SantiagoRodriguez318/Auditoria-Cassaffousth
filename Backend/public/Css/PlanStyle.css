@@ -406,3 +406,12 @@ body {
   -moz-transition: box-shadow 0.2s ease-in;
   transition: box-shadow 0.2s ease-in;
 }
+.LangBtn {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    background-color: #007BFF;
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: none;
+    color: white;
+}

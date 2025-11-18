@@ -6,7 +6,8 @@ import {
     BaseEntity,
     PrimaryGeneratedColumn,
     } from "typeorm";
-
+    
+    import { Planes } from "../enum"
     import { IsNumber, IsString, MaxLength} from 'class-validator';
 
 
@@ -28,8 +29,10 @@ export class User extends BaseEntity{
     @MaxLength(100, { message: 'El email no puede exceder los 100 caracteres.' })
     Email: string;
 
-    @Column({default: "Ninguno", nullable: true})
-    Plan: string;
+    @Column({type: "enum",
+    enum: Planes,
+    default: Planes.none})
+    Plan: Planes;
 
     @Column({nullable: false})
     @IsString()

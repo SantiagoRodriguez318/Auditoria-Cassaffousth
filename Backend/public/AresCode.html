@@ -13,8 +13,9 @@
     <div class="logo">AresCode</div>
     <nav>
       <ul>
-        <li><a href="Plans.html">Paquetes</a></li>
-        <button class="SocialBtn" onclick="toggleSocialWindow()">Redes</button>
+        <li><a data-i18n="nav.packages" href="Plans.html">Paquetes</a></li>
+
+        <button class="SocialBtn" onclick="toggleSocialWindow()" data-i18n="nav.social">Redes</button>
         <div id="SocialWindow" class="SocialWindow">
           <a class="InstagramLink" href="https://www.instagram.com/arescodeofficial/?utm_source=ig_web_button_share_sheet">
           <i id="InstagramLogo" class="fab fa-instagram"></i>
@@ -23,27 +24,48 @@
           <i id="WhatsappLogo" class="fab fa-whatsapp"></i>
           </a>
         </div>
-        <li><a href="Login.html">Iniciar sesión</a></li>
-        <li><a href="Register.HTML">Registrarse</a> 
+
+        <li><a data-i18n="nav.login" href="Login.html">Iniciar sesión</a></li>
+        <li><a data-i18n="nav.register" href="Register.HTML">Registrarse</a></li>
+
+        <!-- 🔵 BOTÓN TOGGLE DE IDIOMA -->
+        <li>
+          <button id="langToggle" class="LangBtn">EN</button>
+        </li>
       </ul>
     </nav>
   </header>
-
-  <main class="contact-section">
-    <div class="text-content">
       <img class="banner" src="../../AresCode/Images/Hand2.png">
-      <h1>Contáctanos hoy<br>impulsa tu proyecto mañana</h1>
-      <p>En AresCode, conectamos talento con tecnología. Escríbenos para<br>comenzar tu transformación digital.</p>
-      <p>AresCode es una empresa de desarrolladores encargados de la elaboración de paginas Web,<br> Abarcamos desde pequeños emprendendedores hasta grandes empresas. Brindando una calidad <br>de desarrollo excepcional, junto con servicios opcionales de Hosting y Soporte.</p>
+  <main class="contact-section">
+
+    <div class="text-content">
+      <h1 data-i18n="home.title">Contáctanos hoy<br>impulsa tu proyecto mañana</h1>
+
+      <p data-i18n="home.subtitle">
+        En AresCode, conectamos talento con tecnología. Escríbenos para<br>comenzar tu transformación digital.
+      </p>
+
+      <p data-i18n="home.description">
+        AresCode es una empresa de desarrolladores encargados de la elaboración de paginas Web,<br> 
+        Abarcamos desde pequeños emprendendedores hasta grandes empresas. Brindando una calidad <br>
+        de desarrollo excepcional, junto con servicios opcionales de Hosting y Soporte.
+      </p>
+
       <div class="Buttons">
-        <button class="ContactBtn">Escríbenos</button>
-        <button class="InfoBtn" onclick="toggleInfoWindow()">Más información</button>
+        <button class="ContactBtn" data-i18n="home.contact">Escríbenos</button>
+
         <div id="InfoWindow" class="InfoWindow">
-          <p> AresCode es una empresa de desarrolladores encargados de la elaboración de páginas Web, abarcamos desde pequeños emprendendedores hasta grandes empresas </p>
+          <p data-i18n="home.popup">
+            AresCode es una empresa de desarrolladores encargados de la elaboración de páginas Web, 
+            abarcamos desde pequeños emprendendedores hasta grandes empresas.
+          </p>
         </div>
       </div>
     </div>
   </main>
-    <script src="Scripts/AresScript.js"></script>
-  </body>
+
+  <script src="Scripts/translations.js"></script>
+  <script src="Scripts/lang.js"></script>
+  <script src="Scripts/AresScript.js"></script>
+</body>
 </html>
